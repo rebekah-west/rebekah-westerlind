@@ -77,12 +77,6 @@
   .links a.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
   .links a.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 
-  /* stats */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
-  .stat { padding: 28px 0 28px 20px; border-left: 1px solid var(--line); }
-  .stat:first-child { border-left: 0; padding-left: 0; }
-  .stat b { display: block; font: 400 34px/1.1 var(--serif); }
-  .stat span { font-size: 13px; color: var(--muted); }
 
   /* sections */
   section { padding: 72px 0; border-bottom: 1px solid var(--line); }
@@ -137,10 +131,6 @@
     header.hero { padding: 56px 0 48px; }
     .hero-grid { grid-template-columns: 1fr; gap: 28px; }
     .portrait { width: 112px; height: 112px; order: -1; }
-    .stats { grid-template-columns: 1fr 1fr; }
-    .stat { padding: 20px 0 20px 16px; }
-    .stat:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
-    .stat:nth-child(4) { border-top: 1px solid var(--line); }
     section { padding: 52px 0; }
     .sec { grid-template-columns: 1fr; gap: 20px; }
     .cards { grid-template-columns: 1fr; }
@@ -181,12 +171,6 @@
   </div>
 </header>
 
-<div class="wrap stats" aria-label="Highlights">
-  <div class="stat"><b>14×</b><span>faster datasets from the virtualization system I drove</span></div>
-  <div class="stat"><b>3×</b><span>promoted in four years at Snorkel AI</span></div>
-  <div class="stat"><b>2</b><span>stages: SnorkelCon 2024 and ODSC</span></div>
-  <div class="stat"><b>2</b><span>degrees from Cornell: CS and ORIE</span></div>
-</div>
 
 <section id="about">
   <div class="wrap sec">
