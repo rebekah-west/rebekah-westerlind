@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebekah Westerlind</title>
+<meta name="description" content="Rebekah Westerlind — product and engineering lead building AI tools at Laude Institute. Formerly Snorkel AI. Cornell CS & ORIE.">
+<meta property="og:title" content="Rebekah Westerlind">
+<meta property="og:description" content="Product and engineering lead building tools that help AI research reach the world.">
+<meta property="og:image" content="assets/rebekah.jpg">
+<link rel="icon" href="assets/rebekah-pixel.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --fg: #16161a;
+    --muted: #6b6a66;
+    --faint: #a3a19b;
+    --line: #e4e1da;
+    --accent: #1f4d3a;
+    --accent-soft: #e7efe9;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111312;
+      --fg: #ecebe6;
+      --muted: #9a9993;
+      --faint: #64635e;
+      --line: #262826;
+      --accent: #8fc7a9;
+      --accent-soft: #1a2620;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 400 16px/1.65 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--faint); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  nav .mark { font-family: var(--serif); font-size: 19px; text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 24px; font-size: 14px; color: var(--muted); }
+  nav ul a { text-decoration: none; }
+
+  /* hero */
+  header.hero { padding: 96px 0 72px; border-bottom: 1px solid var(--line); }
+  .hero-grid { display: grid; grid-template-columns: 1fr 200px; gap: 48px; align-items: center; }
+  .eyebrow { font: 400 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  h1 { font: 400 clamp(44px, 7vw, 68px)/1.02 var(--serif); letter-spacing: -.02em; margin-bottom: 24px; }
+  .lede { font-size: 19px; line-height: 1.55; color: var(--muted); max-width: 34em; }
+  .lede strong { color: var(--fg); font-weight: 500; }
+  .portrait { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); filter: grayscale(.15); }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+  .links a {
+    font-size: 14px; text-decoration: none; padding: 7px 14px;
+    border: 1px solid var(--line); border-radius: 999px; transition: border-color .15s, color .15s;
+  }
+  .links a:hover { border-color: var(--accent); }
+  .links a.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .links a.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+  .stat { padding: 28px 0 28px 20px; border-left: 1px solid var(--line); }
+  .stat:first-child { border-left: 0; padding-left: 0; }
+  .stat b { display: block; font: 400 34px/1.1 var(--serif); }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  /* sections */
+  section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  .sec { display: grid; grid-template-columns: 180px 1fr; gap: 40px; }
+  h2 { font: 400 12px/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .prose p { font-size: 17px; margin-bottom: 1em; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* roles */
+  .role { padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px dashed var(--line); }
+  .role:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+  .role-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .role h3 { font: 500 21px/1.3 var(--serif); }
+  .role h3 em { font-style: normal; color: var(--muted); }
+  .dates { font: 400 13px var(--mono); color: var(--muted); white-space: nowrap; }
+  .role .sub { color: var(--muted); font-size: 15px; margin: 4px 0 14px; }
+  .role ul { list-style: none; }
+  .role li { position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 15.5px; }
+  .role li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 1px; background: var(--faint); }
+  .tag { display: inline-block; font: 400 11px var(--mono); letter-spacing: .04em; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: 3px; }
+  .num { font-family: var(--serif); font-size: 1.12em; color: var(--accent); }
+
+  /* cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .card { padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; display: block; }
+  a.card:hover { background: var(--accent-soft); color: inherit; }
+  .card .k { font: 400 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .card h4 { font: 500 17px/1.35 var(--serif); margin: 8px 0 6px; }
+  .card p { font-size: 14px; color: var(--muted); }
+
+  /* compact list */
+  .list { list-style: none; }
+  .list li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
+  .list li:first-child { padding-top: 0; }
+  .list li:last-child { border-bottom: 0; }
+  .list .muted { color: var(--muted); font-size: 14px; display: block; margin-top: 2px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .chips span { font-size: 13.5px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; }
+  .subhead { font: 500 15px var(--sans); margin: 28px 0 4px; }
+  .subhead:first-child { margin-top: 0; }
+
+  footer { padding: 56px 0 72px; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+  footer h2 { margin-bottom: 12px; }
+  .contact { font: 400 clamp(26px, 4vw, 36px)/1.2 var(--serif); }
+  .pixel { width: 44px; image-rendering: pixelated; opacity: .9; }
+  .fine { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+  @media (max-width: 720px) {
+    nav ul { display: none; }
+    header.hero { padding: 56px 0 48px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+    .portrait { width: 112px; height: 112px; order: -1; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat { padding: 20px 0 20px 16px; }
+    .stat:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+    .stat:nth-child(4) { border-top: 1px solid var(--line); }
+    section { padding: 52px 0; }
+    .sec { grid-template-columns: 1fr; gap: 20px; }
+    .cards { grid-template-columns: 1fr; }
+    .wrap { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="#top">Rebekah Westerlind</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Product &amp; Engineering · Laude Institute</p>
+      <h1>Rebekah<br>Westerlind</h1>
+      <p class="lede">I build tools that help <strong>AI research reach the real world</strong>. Today I lead product at Laude Institute. Before that I spent four years at Snorkel AI, where I was promoted three times and led the company's first GenAI evaluation workflow.</p>
+      <div class="links">
+        <a class="primary" href="mailto:rswesterlind@gmail.com">Get in touch</a>
+        <a href="https://www.linkedin.com/in/rebekah-westerlind/">LinkedIn</a>
+        <a href="https://github.com/rebekah-west">GitHub</a>
+        <a href="https://x.com/rswesterlind">X</a>
+        <a href="https://www.laude.org/impact/rebekah-westerlind">Impact profile</a>
+      </div>
+    </div>
+    <img class="portrait" src="assets/rebekah.jpg" alt="Portrait of Rebekah Westerlind">
+  </div>
+</header>
+
+<div class="wrap stats" aria-label="Highlights">
+  <div class="stat"><b>14×</b><span>faster datasets from the virtualization system I drove</span></div>
+  <div class="stat"><b>3×</b><span>promoted in four years at Snorkel AI</span></div>
+  <div class="stat"><b>2</b><span>stages: SnorkelCon 2024 and ODSC</span></div>
+  <div class="stat"><b>2</b><span>degrees from Cornell: CS and ORIE</span></div>
+</div>
+
+<section id="about">
+  <div class="wrap sec">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I'm a technical builder with full-stack product experience: I like owning a problem from the first whiteboard sketch to the system customers rely on. Most of my work has lived where data, evaluation and AI workflows meet, and on making complex systems feel simple to the people using them.</p>
+      <p>At Laude Institute I lead product on the Impact Platform, the system behind Laude's impact profiles. It tracks impactful researchers, papers and open-source projects, and scores their outcomes so Laude can find and back the work that matters most.</p>
+      <p>I care about clear communication, mentorship and teams that ship. Outside work you'll find me trail running, playing soccer, playing the cornet, reading, or in a Swedish <em>bastu</em>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap sec">
+    <h2>Experience</h2>
+    <div>
+      <article class="role">
+        <div class="role-head">
+          <h3>Laude Institute <em>· Member of Technical Staff, Product Lead</em></h3>
+          <span class="dates">2026 — Now</span>
+        </div>
+        <p class="sub">Building tools to help ship AI research aimed at making the world a better place.</p>
+        <ul>
+          <li>Lead product and engineering on the <a href="https://www.laude.org/impact">Laude Impact Platform</a>, which indexes researchers, papers, repos and companies and powers Laude's sourcing and decision-making.</li>
+          <li>Designed the Impact and Predictive scores, including outcome signals such as dependency reach, Hugging Face downloads, patent citations, disruption index and mentorship outcomes, grounded in how REF, DORA, NSF and NIH measure impact.</li>
+          <li>Built "Blinking red" early-signal alerts from GitHub, X and the web, a browser extension, and Slack integrations that bring the index into the team's daily work.</li>
+          <li>Presented the platform to Laude's partners and investors at the annual general meeting.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Snorkel AI <em>· Software Engineer → Technical Team Lead</em></h3>
+          <span class="dates">2022 — 2026</span>
+        </div>
+        <p class="sub">Full-stack engineer on product engineering for Snorkel Flow, the data-centric AI platform.</p>
+        <ul>
+          <li>Led architecture and delivery of Snorkel's <strong>first evaluation workflow</strong>, and developed the GenAI evaluation narrative adopted across engineering, product and marketing.</li>
+          <li>Drove the Dataset Virtualization System (VDS) from concept to production, designing data transforms and caching layers that made datasets <span class="num">14×</span> faster for several product teams.</li>
+          <li>Led a <span class="num">4</span>-engineer team to build a high-performance data visualization layer that became the foundation for evaluation, annotation and generative workflows, and outlasted several product redesigns.</li>
+          <li>Wrote core SDK and backend systems for dataset filtering, label schemas and annotation.</li>
+          <li>Mentored and onboarded engineers, and set up sprint, design and feedback processes now used across the org.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Ridgeline <em>· Software Engineering Intern</em></h3>
+          <span class="dates">Summer 2021</span>
+        </div>
+        <ul>
+          <li>Built and launched the go-live keyboard shortcut system and Ridgeline's first user preferences service.</li>
+          <li>Developed reusable UI components that sped up frontend development.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Research &amp; earlier work</h3>
+          <span class="dates">2019 — 2021</span>
+        </div>
+        <ul class="list" style="margin-top:14px">
+          <li><span>Stanford AIMI <span class="muted">Built PyTorch CNNs to detect pneumothorax in chest X-rays.</span></span><span class="dates">2020–21</span></li>
+          <li><span>Cornell Johnson School <span class="muted">Cluster analysis to build indicator variables over 5M+ row datasets.</span></span><span class="dates">2020–21</span></li>
+          <li><span>Stanford Health Care <span class="muted">Auto-updating audit databases: 40% more audits, 80% more visibility.</span></span><span class="dates">2019</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="speaking">
+  <div class="wrap sec">
+    <h2>Speaking &amp; Writing</h2>
+    <div class="cards">
+      <a class="card" href="https://snorkel.ai/snorkelcon/">
+        <span class="k">Talk · NYC · Oct 2024</span>
+        <h4>SnorkelCon 2024</h4>
+        <p>The only engineer on stage: how to programmatically evaluate LLM performance, and why data curation unlocks the next wave of AI value.</p>
+      </a>
+      <div class="card">
+        <span class="k">Talk · ODSC</span>
+        <h4>Open Data Science Conference</h4>
+        <p>Represented Snorkel's founders on LLM evaluation and data-centric AI development.</p>
+      </div>
+      <a class="card" href="https://snorkel.ai/blog/how-llm-evaluation-drives-better-models-in-snorkel-flow/">
+        <span class="k">Essay · Dec 2024</span>
+        <h4>How LLM evaluation drives better models</h4>
+        <p>A methodical workflow for evaluating LLM systems in Snorkel Flow.</p>
+      </a>
+      <div class="card">
+        <span class="k">Talk · Laude AGM · 2026</span>
+        <h4>Internal tools for inception capital</h4>
+        <p>How the Impact Platform helps Laude find deeply technical founders before they know they want to found.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap sec">
+    <h2>Education</h2>
+    <div>
+      <div class="role-head">
+        <h3 style="font:500 21px/1.3 var(--serif)">Cornell University</h3>
+        <span class="dates">2016 — 2022</span>
+      </div>
+      <p class="sub" style="color:var(--muted);margin:4px 0 18px">B.S. Computer Science · Operations Research &amp; Information Engineering</p>
+      <ul class="list">
+        <li><span>President, Cornell Consulting <span class="muted">Researched AI and RPA applications for a Fortune 100 company.</span></span></li>
+        <li><span>President, Forté Campus at Cornell <span class="muted">Led a team building growth and monetization strategy for a startup.</span></span></li>
+        <li><span>President, LDSSA <span class="muted">Grew on-campus presence through interfaith events with university staff.</span></span></li>
+      </ul>
+      <p class="subhead" style="margin-top:28px">Sequoia High School</p>
+      <p style="color:var(--muted);font-size:15px">Valedictorian, IB Diploma · First Team All-League in varsity soccer and lacrosse</p>
+    </div>
+  </div>
+</section>
+
+<section id="more">
+  <div class="wrap sec">
+    <h2>Beyond work</h2>
+    <div>
+      <p class="subhead">Sweden</p>
+      <p style="font-size:15.5px">Spent 18 months serving and teaching in Swedish communities, 12 of them in leadership. I speak Swedish fluently.</p>
+      <p class="subhead">Side projects</p>
+      <ul class="list">
+        <li><span>Christmas Crèche, Palo Alto <span class="muted">Database and React app for a donation-sourced nativity exhibition.</span></span><span class="dates">2020</span></li>
+        <li><span>Multiplayer golf in OCaml <span class="muted">Physics, mutable state and full test coverage, built with a team.</span></span><span class="dates">2020</span></li>
+      </ul>
+      <p class="subhead">Interests</p>
+      <div class="chips"><span>Trail running</span><span>Soccer</span><span>Cornet</span><span>Reading</span><span>Bastu</span></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Contact</h2>
+      <a class="contact" href="mailto:rswesterlind@gmail.com">rswesterlind@gmail.com</a>
+      <p class="fine">Portola Valley, California · © <span id="y">2026</span> Rebekah Westerlind</p>
+    </div>
+    <img class="pixel" src="assets/rebekah-pixel.png" alt="" title="Hej!">
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
